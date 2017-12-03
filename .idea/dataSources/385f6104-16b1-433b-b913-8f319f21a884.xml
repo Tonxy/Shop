@@ -1,0 +1,440 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="yshop@localhost">
+  <database-model serializer="dbm" rdbms="MYSQL" format-version="4.4">
+    <root id="1"/>
+    <schema id="2" parent="1" name="yshop">
+      <Current>1</Current>
+      <Visible>1</Visible>
+    </schema>
+    <schema id="3" parent="1" name="information_schema"/>
+    <schema id="4" parent="1" name="mysql"/>
+    <schema id="5" parent="1" name="performance_schema"/>
+    <schema id="6" parent="1" name="sys"/>
+    <schema id="7" parent="1" name="test"/>
+    <table id="8" parent="2" name="adminuser"/>
+    <table id="9" parent="2" name="category"/>
+    <table id="10" parent="2" name="categorysecond"/>
+    <table id="11" parent="2" name="orderitem"/>
+    <table id="12" parent="2" name="orders"/>
+    <table id="13" parent="2" name="packet"/>
+    <table id="14" parent="2" name="product"/>
+    <table id="15" parent="2" name="ticket"/>
+    <table id="16" parent="2" name="user"/>
+    <table id="17" parent="2" name="wallet"/>
+    <table id="18" parent="2" name="warn"/>
+    <column id="19" parent="8" name="uid">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="20" parent="8" name="minventory">
+      <Position>2</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <column id="21" parent="8" name="password">
+      <Position>3</Position>
+      <DataType>varchar(255)|0</DataType>
+    </column>
+    <column id="22" parent="8" name="username">
+      <Position>4</Position>
+      <DataType>varchar(255)|0</DataType>
+    </column>
+    <key id="23" parent="8" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>uid</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="24" parent="9" name="cid">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="25" parent="9" name="cname">
+      <Position>2</Position>
+      <DataType>varchar(255)|0</DataType>
+    </column>
+    <column id="26" parent="9" name="discount">
+      <Position>3</Position>
+      <DataType>float|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="27" parent="9" name="privilegeTime">
+      <Position>4</Position>
+      <DataType>datetime|0</DataType>
+    </column>
+    <key id="28" parent="9" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>cid</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="29" parent="10" name="csid">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="30" parent="10" name="csname">
+      <Position>2</Position>
+      <DataType>varchar(255)|0</DataType>
+    </column>
+    <column id="31" parent="10" name="cid">
+      <Position>3</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <index id="32" parent="10" name="FK_ikn7l2qj5rowv8j5exvg12ye6">
+      <ColNames>cid</ColNames>
+    </index>
+    <key id="33" parent="10" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>csid</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="34" parent="10" name="FK936FCAF21DB1FD15">
+      <ColNames>cid</ColNames>
+      <RefSchemaName>yshop</RefSchemaName>
+      <RefTableName>category</RefTableName>
+      <RefColNames>cid</RefColNames>
+    </foreign-key>
+    <foreign-key id="35" parent="10" name="FK_ikn7l2qj5rowv8j5exvg12ye6">
+      <ColNames>cid</ColNames>
+      <RefSchemaName>yshop</RefSchemaName>
+      <RefTableName>category</RefTableName>
+      <RefColNames>cid</RefColNames>
+    </foreign-key>
+    <column id="36" parent="11" name="itemid">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="37" parent="11" name="count">
+      <Position>2</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <column id="38" parent="11" name="subtotal">
+      <Position>3</Position>
+      <DataType>float|0</DataType>
+    </column>
+    <column id="39" parent="11" name="oid">
+      <Position>4</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <column id="40" parent="11" name="pid">
+      <Position>5</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <index id="41" parent="11" name="FK_fesqehk2fei30hu4isqgmm36f">
+      <ColNames>pid</ColNames>
+    </index>
+    <index id="42" parent="11" name="FK_j20ulwn7395herx5fobexsp9r">
+      <ColNames>oid</ColNames>
+    </index>
+    <key id="43" parent="11" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>itemid</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="44" parent="11" name="FK_j20ulwn7395herx5fobexsp9r">
+      <ColNames>oid</ColNames>
+      <RefSchemaName>yshop</RefSchemaName>
+      <RefTableName>orders</RefTableName>
+      <RefColNames>oid</RefColNames>
+    </foreign-key>
+    <foreign-key id="45" parent="11" name="FK_fesqehk2fei30hu4isqgmm36f">
+      <ColNames>pid</ColNames>
+      <RefSchemaName>yshop</RefSchemaName>
+      <RefTableName>product</RefTableName>
+      <RefColNames>pid</RefColNames>
+    </foreign-key>
+    <column id="46" parent="12" name="oid">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="47" parent="12" name="addr">
+      <Position>2</Position>
+      <DataType>varchar(255)|0</DataType>
+    </column>
+    <column id="48" parent="12" name="name">
+      <Position>3</Position>
+      <DataType>varchar(255)|0</DataType>
+    </column>
+    <column id="49" parent="12" name="ordertime">
+      <Position>4</Position>
+      <DataType>datetime|0</DataType>
+    </column>
+    <column id="50" parent="12" name="phone">
+      <Position>5</Position>
+      <DataType>varchar(255)|0</DataType>
+    </column>
+    <column id="51" parent="12" name="state">
+      <Position>6</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <column id="52" parent="12" name="total">
+      <Position>7</Position>
+      <DataType>float|0</DataType>
+    </column>
+    <column id="53" parent="12" name="uid">
+      <Position>8</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <index id="54" parent="12" name="FK_tk1pibf08nelmar48icf0w8jn">
+      <ColNames>uid</ColNames>
+    </index>
+    <key id="55" parent="12" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>oid</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="56" parent="12" name="FK_tk1pibf08nelmar48icf0w8jn">
+      <ColNames>uid</ColNames>
+      <RefSchemaName>yshop</RefSchemaName>
+      <RefTableName>user</RefTableName>
+      <RefColNames>uid</RefColNames>
+    </foreign-key>
+    <column id="57" parent="13" name="pacid">
+      <Position>1</Position>
+      <Comment>卡包编号</Comment>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="58" parent="13" name="uid">
+      <Position>2</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <index id="59" parent="13" name="FK_th5acal46shrmg0fotogxoq3y">
+      <ColNames>uid</ColNames>
+    </index>
+    <index id="60" parent="13" name="UK_th5acal46shrmg0fotogxoq3y">
+      <ColNames>uid</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="61" parent="13" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>pacid</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <key id="62" parent="13" name="UK_th5acal46shrmg0fotogxoq3y">
+      <ColNames>uid</ColNames>
+      <UnderlyingIndexName>UK_th5acal46shrmg0fotogxoq3y</UnderlyingIndexName>
+    </key>
+    <foreign-key id="63" parent="13" name="FK_th5acal46shrmg0fotogxoq3y">
+      <ColNames>uid</ColNames>
+      <RefSchemaName>yshop</RefSchemaName>
+      <RefTableName>user</RefTableName>
+      <RefColNames>uid</RefColNames>
+    </foreign-key>
+    <column id="64" parent="14" name="pid">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="65" parent="14" name="image">
+      <Position>2</Position>
+      <DataType>varchar(255)|0</DataType>
+    </column>
+    <column id="66" parent="14" name="inventory">
+      <Position>3</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <column id="67" parent="14" name="is_hot">
+      <Position>4</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <column id="68" parent="14" name="market_price">
+      <Position>5</Position>
+      <DataType>float|0</DataType>
+    </column>
+    <column id="69" parent="14" name="pdate">
+      <Position>6</Position>
+      <DataType>datetime|0</DataType>
+    </column>
+    <column id="70" parent="14" name="pdesc">
+      <Position>7</Position>
+      <DataType>varchar(255)|0</DataType>
+    </column>
+    <column id="71" parent="14" name="pname">
+      <Position>8</Position>
+      <DataType>varchar(255)|0</DataType>
+    </column>
+    <column id="72" parent="14" name="shop_price">
+      <Position>9</Position>
+      <DataType>float|0</DataType>
+    </column>
+    <column id="73" parent="14" name="csid">
+      <Position>10</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <index id="74" parent="14" name="FK_2a7f08kkrgphvawvppjq0j225">
+      <ColNames>csid</ColNames>
+    </index>
+    <key id="75" parent="14" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>pid</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="76" parent="14" name="FKED8DCCEFB9B74E02">
+      <ColNames>csid</ColNames>
+      <RefSchemaName>yshop</RefSchemaName>
+      <RefTableName>categorysecond</RefTableName>
+      <RefColNames>csid</RefColNames>
+    </foreign-key>
+    <foreign-key id="77" parent="14" name="FK_2a7f08kkrgphvawvppjq0j225">
+      <ColNames>csid</ColNames>
+      <RefSchemaName>yshop</RefSchemaName>
+      <RefTableName>categorysecond</RefTableName>
+      <RefColNames>csid</RefColNames>
+    </foreign-key>
+    <column id="78" parent="15" name="tid">
+      <Position>1</Position>
+      <Comment>优惠券编号</Comment>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="79" parent="15" name="consume">
+      <Position>2</Position>
+      <DataType>float|0</DataType>
+    </column>
+    <column id="80" parent="15" name="privilege">
+      <Position>3</Position>
+      <DataType>float|0</DataType>
+    </column>
+    <column id="81" parent="15" name="useTime">
+      <Position>4</Position>
+      <DataType>datetime|0</DataType>
+    </column>
+    <column id="82" parent="15" name="cid">
+      <Position>5</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="83" parent="15" name="FK_bveamlrms7iguexr6uteopdo9">
+      <ColNames>cid</ColNames>
+    </index>
+    <index id="84" parent="15" name="UK_bveamlrms7iguexr6uteopdo9">
+      <ColNames>cid</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="85" parent="15" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>tid</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <key id="86" parent="15" name="UK_bveamlrms7iguexr6uteopdo9">
+      <ColNames>cid</ColNames>
+      <UnderlyingIndexName>UK_bveamlrms7iguexr6uteopdo9</UnderlyingIndexName>
+    </key>
+    <foreign-key id="87" parent="15" name="FK_bveamlrms7iguexr6uteopdo9">
+      <ColNames>cid</ColNames>
+      <RefSchemaName>yshop</RefSchemaName>
+      <RefTableName>category</RefTableName>
+      <RefColNames>cid</RefColNames>
+    </foreign-key>
+    <column id="88" parent="16" name="uid">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="89" parent="16" name="addr">
+      <Position>2</Position>
+      <DataType>varchar(255)|0</DataType>
+    </column>
+    <column id="90" parent="16" name="age">
+      <Position>3</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <column id="91" parent="16" name="code">
+      <Position>4</Position>
+      <DataType>varchar(255)|0</DataType>
+    </column>
+    <column id="92" parent="16" name="email">
+      <Position>5</Position>
+      <DataType>varchar(255)|0</DataType>
+    </column>
+    <column id="93" parent="16" name="name">
+      <Position>6</Position>
+      <DataType>varchar(255)|0</DataType>
+    </column>
+    <column id="94" parent="16" name="password">
+      <Position>7</Position>
+      <DataType>varchar(255)|0</DataType>
+    </column>
+    <column id="95" parent="16" name="phone">
+      <Position>8</Position>
+      <DataType>varchar(255)|0</DataType>
+    </column>
+    <column id="96" parent="16" name="state">
+      <Position>9</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <column id="97" parent="16" name="username">
+      <Position>10</Position>
+      <DataType>varchar(255)|0</DataType>
+    </column>
+    <key id="98" parent="16" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>uid</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="99" parent="17" name="wid">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="100" parent="17" name="money">
+      <Position>2</Position>
+      <DataType>float|0</DataType>
+    </column>
+    <column id="101" parent="17" name="uid">
+      <Position>3</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <index id="102" parent="17" name="FK_gd56wkq3b1wc4gd068p6iwsq">
+      <ColNames>uid</ColNames>
+    </index>
+    <index id="103" parent="17" name="UK_gd56wkq3b1wc4gd068p6iwsq">
+      <ColNames>uid</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="104" parent="17" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>wid</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <key id="105" parent="17" name="UK_gd56wkq3b1wc4gd068p6iwsq">
+      <ColNames>uid</ColNames>
+      <UnderlyingIndexName>UK_gd56wkq3b1wc4gd068p6iwsq</UnderlyingIndexName>
+    </key>
+    <foreign-key id="106" parent="17" name="FK_gd56wkq3b1wc4gd068p6iwsq">
+      <ColNames>uid</ColNames>
+      <RefSchemaName>yshop</RefSchemaName>
+      <RefTableName>user</RefTableName>
+      <RefColNames>uid</RefColNames>
+    </foreign-key>
+    <foreign-key id="107" parent="17" name="wallet_ibfk_1">
+      <ColNames>uid</ColNames>
+      <RefSchemaName>yshop</RefSchemaName>
+      <RefTableName>user</RefTableName>
+      <RefColNames>uid</RefColNames>
+    </foreign-key>
+    <column id="108" parent="18" name="mid">
+      <Position>1</Position>
+      <DataType>int(5)|0</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;0&apos;</DefaultExpression>
+    </column>
+    <column id="109" parent="18" name="minventory">
+      <Position>2</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+  </database-model>
+</dataSource>
