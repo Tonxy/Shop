@@ -29,4 +29,13 @@ public class simpleTest {
     public int dec(int a,int b){
         return a-b;
     }
+
+    @Test
+    public void testClear(){
+        System.out.println("git stash list success!");
+    }
+    @Test
+    public void testResr(){
+        System.out.println("git reset --hard success!");
+    }
 }
