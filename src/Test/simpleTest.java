@@ -14,4 +14,11 @@ public class simpleTest {
         System.out.println("hh");
         System.out.println(add(1,2));
     }
+    @Test
+    public void outputDelay(){
+        delay();
+    }
+    public void delay(){
+        System.out.println("delay");
+    }
 }
