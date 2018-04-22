@@ -21,4 +21,12 @@ public class simpleTest {
     public void delay(){
         System.out.println("delay");
     }
+
+    @Test
+    public void testDec(){
+        System.out.println(dec(10,2));
+    }
+    public int dec(int a,int b){
+        return a-b;
+    }
 }
