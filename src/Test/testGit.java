@@ -7,4 +7,9 @@ public class testGit {
         System.out.println("test version RollBack");
         System.out.println("test git stash");
     }
+
+    @Test
+    public void testPush(){
+        System.out.println("git status");
+    }
 }
